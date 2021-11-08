@@ -12,7 +12,11 @@
                 <a href="small_trying2">Link to localhost:8081/small_trying2</a><br>
                 <a href="small_trying3">Link to localhost:8081/small_trying3</a><br>
                 <a href="small_trying4">Link to localhost:8081/small_trying4 without parameters goes to 404</a><br>
-                <a href="small_trying4?id=456">Link to localhost:8081/small_trying4 with parameters</a><br><br>
+                <a href="small_trying4?id=456">Link to localhost:8081/small_trying4 with parameters</a><br>
+                <a href="/first">Link to localhost:8081/first</a><br>
+                <a href="/second">Link to localhost:8081/second</a><br>
+                <a href="/download">Link to localhost:8081/download</a><br><br>
+
 
         <form action="small_trying2" method="POST">
             <label>
