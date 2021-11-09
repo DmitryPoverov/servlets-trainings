@@ -1,4 +1,4 @@
-package by.dmLessons.servlets;
+package by.dmLessons.servlets.trainings;
 
 
 import javax.servlet.ServletConfig;
