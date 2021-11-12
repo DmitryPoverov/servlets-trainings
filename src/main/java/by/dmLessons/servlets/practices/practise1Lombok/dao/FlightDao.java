@@ -3,6 +3,7 @@ package by.dmLessons.servlets.practices.practise1Lombok.dao;
 import by.dmLessons.servlets.practices.practise1Lombok.entity.Flight;
 import by.dmLessons.servlets.practices.practise1Lombok.entity.FlightStatus;
 import by.dmLessons.servlets.practices.practise1Lombok.util.ConnectionManager;
+import lombok.SneakyThrows;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class FlightDao implements Dao<Long, Flight> {
     }
 
     @Override
+    @SneakyThrows
     public List<Flight> findAll() {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
@@ -33,8 +35,6 @@ public class FlightDao implements Dao<Long, Flight> {
                 flights.add(buildFlight(resultSet));
             }
             return flights;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
