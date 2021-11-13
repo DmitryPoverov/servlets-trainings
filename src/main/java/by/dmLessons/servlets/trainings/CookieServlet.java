@@ -26,7 +26,7 @@ public class CookieServlet extends HttpServlet {
                                         .isEmpty()) {
             var cookie = new Cookie(UNIQUE_ID, "1");
             cookie.setPath("/cookies");
-            cookie.setMaxAge(-1);   // время жизни cookie (в сек.), по-умолчанию: -1 (удалить с закрытием браузера)
+            cookie.setMaxAge(60*15);   // время жизни cookie (в сек.), по-умолчанию: -1 (удалить с закрытием браузера)
 // т.к. мы в ответе с сервера отправляем наши куки, то в resp добавляем cookie
             resp.addCookie(cookie);
             counter.incrementAndGet();

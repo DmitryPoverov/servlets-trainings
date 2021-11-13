@@ -31,6 +31,5 @@ public class FlightServlet extends HttpServlet {
             });
             printWriter.write("</ul>");
         }
-
     }
 }
