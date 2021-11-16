@@ -8,12 +8,12 @@
     <%@include file="header.jsp"%>
     <br>
     <form action="${pageContext.request.contextPath}/login" method="post">
-        <label for="emailId">Email:
+        <label for="emailId"><fmt:message key="page.registration.email"/>
             <input type="text" name="email" id="emailId" value="${param.email}" required>
         </label>
         <br>
         <br>
-        <label for="passwordId">Password:
+        <label for="passwordId"><fmt:message key="page.registration.password"/>
             <input type="password" name="password" id="passwordId" required>
         </label>
         <button type="submit">Login</button>

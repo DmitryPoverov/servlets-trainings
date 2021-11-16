@@ -1,15 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<fmt:setLocale value="ru_RU"/>
-<fmt:setBundle basename="translations"/>
+
 <%@include file="header.jsp" %>
 
 <br>
@@ -19,22 +17,22 @@
                 <input type="file" name="image" id="imageId">
             </label>
             <br><br>--%>
-    <label for="nameId">Name:
+    <label for="nameId"><fmt:message key="page.registration.name"/>
         <input type="text" name="userName" id="nameId">
     </label>
     <br>
     <br>
-    <label for="birthdayId">Birthday:
+    <label for="birthdayId"><fmt:message key="page.registration.birthday"/>
         <input type="date" name="birthDay" id="birthdayId" required>
     </label>
     <br>
     <br>
-    <label for="emailId"><fmt:message key="page.login.email"/>
+    <label for="emailId"><fmt:message key="page.registration.email"/>
         <input type="text" name="eMail" id="emailId">
     </label>
     <br>
     <br>
-    <label for="passwordId"><fmt:message key="page.login.password"/>
+    <label for="passwordId"><fmt:message key="page.registration.password"/>
         <input type="password" name="password" id="passwordId">
     </label>
     <br>
@@ -75,6 +73,6 @@
         </div>
     </c:if>
 </form>
-<%@include file="header.jsp" %>
+<%@include file="footer.jsp" %>
 </body>
 </html>
