@@ -1,6 +1,7 @@
 package by.dmLessons.servlets.practices.practise1Lombok.servlets;
 
 import by.dmLessons.servlets.practices.practise1Lombok.service.FlightService;
+import by.dmLessons.servlets.trainings.utils.JspHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,15 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
-@WebServlet("/flights-lombok")
+@WebServlet("/flights-lombok")  // для flight.jsp
 public class FlightServlet extends HttpServlet {
 
     private final FlightService flightService = FlightService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("flights", flightService.findAll());
+
+        req.getRequestDispatcher(JspHelper.getPath("flights"))
+                .forward(req, resp);
+
+/* После применения JSTL этот блок кода больше не нужен.
         resp.setContentType("text/html");
         resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
         try (var printWriter = resp.getWriter()) {
@@ -30,6 +36,6 @@ public class FlightServlet extends HttpServlet {
                         """.formatted(flightDto.getId(), flightDto.getDescription()));
             });
             printWriter.write("</ul>");
-        }
+        }*/
     }
 }

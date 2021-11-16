@@ -1,21 +1,24 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
 <html>
 <head>
     <title>My first servlet</title>
 </head>
     <body>
+
         <h1><%= "This is a message from index.jsp" %></h1><br>
-                <a href="hello-servlet">Link to localhost:8081/hello-servlet</a><br>
-                <a href="my_servlet">Link to localhost:8081/my_servlet</a><br>
-                <a href="small_trying">Link to localhost:8081/small_trying</a><br>
-                <a href="small_trying2">Link to localhost:8081/small_trying2</a><br>
-                <a href="small_trying3">Link to localhost:8081/small_trying3</a><br>
-                <a href="small_trying4">Link to localhost:8081/small_trying4 without parameters goes to 404</a><br>
-                <a href="small_trying4?id=456">Link to localhost:8081/small_trying4 with parameters</a><br>
-                <a href="/first">Link to localhost:8081/first</a><br>
-                <a href="/second">Link to localhost:8081/second</a><br>
-                <a href="/download">Link to localhost:8081/download</a><br><br>
+        <a href="hello-servlet">Link to localhost:8081/hello-servlet</a><br>
+        <a href="my_servlet">Link to localhost:8081/my_servlet</a><br>
+        <a href="small_trying">Link to localhost:8081/small_trying</a><br>
+        <a href="small_trying2">Link to localhost:8081/small_trying2</a><br>
+        <a href="small_trying3">Link to localhost:8081/small_trying3</a><br>
+        <a href="small_trying4">Link to localhost:8081/small_trying4 without parameters goes to my own 404</a><br>
+        <a href="small_trying4?id=456">Link to localhost:8081/small_trying4 with parameters</a><br>
+        <a href="first">Link to localhost:8081/first</a><br>
+        <a href="second">Link to localhost:8081/second</a><br>
+        <a href="download">Link to localhost:8081/download</a><br>
+        <a href="flights-lombok">Link to localhost:8081/flights-lombok</a><br>
+        <a href="registration">Link to localhost:8081/registration</a><br>
+        <a href="login">Link to localhost:8081/login</a><br><br>
 
 
         <form action="small_trying2" method="POST">

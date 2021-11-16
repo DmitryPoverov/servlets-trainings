@@ -1,8 +1,9 @@
 package by.dmLessons.servlets.practices.practise1Lombok.dao;
 
+import by.dmLessons.servlets.practices.practise1.dao.Dao;
+import by.dmLessons.servlets.practices.practise1.util.ConnectionManager;
 import by.dmLessons.servlets.practices.practise1Lombok.entity.Flight;
 import by.dmLessons.servlets.practices.practise1Lombok.entity.FlightStatus;
-import by.dmLessons.servlets.practices.practise1Lombok.util.ConnectionManager;
 import lombok.SneakyThrows;
 
 import java.sql.ResultSet;
