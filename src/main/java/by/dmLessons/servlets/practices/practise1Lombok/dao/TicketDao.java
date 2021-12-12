@@ -17,7 +17,7 @@ public class TicketDao implements Dao<Long, Ticket> {
 
     private static final String FIND_ALL_BY_FLIGHT_ID = """
             SELECT *
-            FROM flight_schema.ticket
+            FROM ticket
             WHERE flight_id = ?
             """;
 

@@ -15,12 +15,12 @@ public class UserDao implements Dao<Integer, User> {
 
     private static final UserDao INSTANCE = new UserDao();
     public static final String SAVE_SQL = """
-            INSERT INTO usersdm (name, birthday, email, password, role, gender)
+            INSERT INTO users_dm (name, birthday, email, password, role, gender)
             VALUES (?, ?, ?, ?, ?, ?)
             """;
     private static final String FIND_BY_EMAIL_AND_PASSWORD_SQL = """
             SELECT *
-            FROM usersdm
+            FROM users_dm
             WHERE email=? AND password=?
             """;
 
@@ -43,6 +43,18 @@ public class UserDao implements Dao<Integer, User> {
             }
             return Optional.ofNullable(user);
         }
+    }
+
+    private User buildEntity(ResultSet resultSet) throws SQLException {
+        return User.builder()
+                .id(resultSet.getObject("id", Integer.class))
+                .name(resultSet.getObject("name", String.class))
+                .birthday(resultSet.getObject("birthday", Date.class).toLocalDate())
+                .email(resultSet.getObject("email", String.class))
+                .password(resultSet.getObject("password", String.class))
+                .role(Role.valueOf(resultSet.getObject("role", String.class)))
+                .gender(Gender.valueOf(resultSet.getObject("gender", String.class)))
+                .build();
     }
 
     @Override
@@ -81,17 +93,5 @@ public class UserDao implements Dao<Integer, User> {
 
     @Override
     public void update(User entity) {
-    }
-
-    private User buildEntity(ResultSet resultSet) throws SQLException {
-        return User.builder()
-                .id(resultSet.getObject("id", Integer.class))
-                .name(resultSet.getObject("name", String.class))
-                .birthday(resultSet.getObject("birthday", Date.class).toLocalDate())
-                .email(resultSet.getObject("email", String.class))
-                .password(resultSet.getObject("password", String.class))
-                .role(Role.valueOf(resultSet.getObject("role", String.class)))
-                .gender(Gender.valueOf(resultSet.getObject("gender", String.class)))
-                .build();
     }
 }

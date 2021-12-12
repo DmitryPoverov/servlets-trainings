@@ -15,7 +15,7 @@ public class FlightDao implements Dao<Long, Flight> {
 
     private static final String FIND_ALL_SQL = """
             SELECT *
-            FROM flight_schema.flight
+            FROM flight
             """;
 
     private FlightDao() {

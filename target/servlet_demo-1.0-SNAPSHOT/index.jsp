@@ -16,6 +16,7 @@
         <a href="first">Link to localhost:8081/first</a><br>
         <a href="second">Link to localhost:8081/second</a><br>
         <a href="download">Link to localhost:8081/download</a><br>
+        <a href="flights">Link to localhost:8081/flights</a><br>
         <a href="flights-lombok">Link to localhost:8081/flights-lombok</a><br>
         <a href="registration">Link to localhost:8081/registration</a><br>
         <a href="login">Link to localhost:8081/login</a><br><br>
